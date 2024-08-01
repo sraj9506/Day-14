@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     echo "Building Docker Image : "
-                    sh 'docker buid -t myapp:latest .'
+                    sh 'docker build -t myapp:latest .'
 		    sh 'docker login --username suryrajsinh9506 --password Suryrajsinh@9506'
 	            sh 'docker push suryrajsinh9506/myapp:latest'
                 }
