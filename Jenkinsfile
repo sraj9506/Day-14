@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     echo "Building Docker Image : "
-                    sh 'sudo docker build -t myapp:latest .'
+                    sh 'sudo docker build -t suryrajsinh9506/myapp:latest .'
 		    sh 'sudo docker login --username suryrajsinh9506 --password Suryrajsinh@9506'
 	            sh 'sudo docker push suryrajsinh9506/myapp:latest'
                 }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     echo "Deploy Docker Container :"
-                    sh 'sudo docker run -d --name myapp myapp:latest'
+                    sh 'sudo docker run -d --name myapp suryrajsinh9506/myapp:latest'
                 }
             }
         }
